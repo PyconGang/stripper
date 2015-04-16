@@ -7,4 +7,5 @@ from scrapy.Item import Item, Field
 
 class RedditPost(Item):
     title = Field()
-    upvotes = Field()
+    votes = Field()
+    link = Field()
