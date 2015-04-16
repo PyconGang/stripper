@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- saved from url=(0087)http://static.adzerk.net/reddit/ads.html?sr=python,loggedin&bust2#http://www.reddit.com -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style>
+  body { margin:0; }
+</style>
+<script type="text/javascript" async="" src="ados"></script><script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="ados.js"></script>
+<script type="text/javascript">
+function getParameterByName(name)
+{
+  name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+  var regexS = "[\\?&]" + name + "=([^&#]*)";
+  var regex = new RegExp(regexS);
+  var results = regex.exec(window.location.search);
+  if(results == null)
+    return "";
+  else
+    return decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+ados_results = null;
+ados.isAsync = true;
+ados_add_placement(5146, 24950, "main", 5);
+ados_add_placement(5146, 24950, "sponsorship", 8);
+ados_setWriteResults(true);
+var keywords = getParameterByName("sr");
+if(keywords != "")
+  ados_setKeywords(keywords);
+ados_load();
+</script>
+<script type="text/javascript">
+  target = location.hash.substr(1);
+  window.name = 'ad_main';
+  var timeout = 0;
+  var loadSponsorship = function() {
+    timeout++;
+    if(ados_results) {
+      if(ados_results["sponsorship"]) {
+        if (window.postMessage) {
+          window.parent.postMessage('ados.createAdFrame:sponsorship', target);
+        } else {
+          iframe = document.createElement('iframe');
+          iframe.src = 'http://www.reddit.com/static/createadframe.html';
+          iframe.style.display = 'none';
+          document.documentElement.appendChild(iframe);
+        }
+      }
+    }
+    else {
+      if(timeout < 200) {
+        setTimeout(loadSponsorship, 10);
+      }
+    }
+  }
+  $(window).load(loadSponsorship);
+</script>
+<script type="text/javascript" src="adFeedback.js"></script><link rel="stylesheet" href="http://static.adzerk.net/Extensions/adFeedback.css"></head>
+<body>
+<div id="main" class="adzerk-vote"><a href="http://engine.adzerk.net/r?e=eyJhdiI6MTg4MjcsImF0Ijo1LCJidCI6MCwiY20iOjIwNTgzMywiY2giOjc5ODQsImNyIjo3OTY4NDgsImRpIjoiZTI0MDkwNGQyZTc4NGViN2E2N2U4MzZiODA0OTEyNGUiLCJkbSI6MSwiZmMiOjgyOTY1NCwiZmwiOjUzNDg2NSwiaXAiOiIxMDAuMzMuNTguOTAiLCJrdyI6InB5dGhvbixsb2dnZWRpbiIsIm53Ijo1MTQ2LCJwYyI6MCwicHIiOjIwMzY1LCJydCI6MSwicmYiOiJodHRwOi8vd3d3LnJlZGRpdC5jb20vci9QeXRob24vbmV3LyIsInN0IjoyNDk1MCwidWsiOiJ1ZTEtMDA1YTBiZTJjYjRmNDQyZmFjYjU5YjM5ZWMyMjhlZmQiLCJ0cyI6MTQyOTIxNjM5ODIxMSwiYmYiOnRydWUsInBuIjoibWFpbiIsInVyIjoiaHR0cHM6Ly93d3cucmVkZGl0LmNvbS9yL1Vwdm90ZWQvY29tbWVudHMvMnV3aGJ3L2VwaXNvZGVfNF90aGVfc3Rvcnlfb2ZfdWpheGFuaV9qb3JkYW5fYXhhbmkvIn0&s=ydnvS4YfZ3Onj2YDN8hAXX3aDz4" rel="nofollow" target="_blank" title=""><img src="ad109828d7b543d2b4ba98b9a2487c39.png" title="" alt="" border="0" width="300" height="250"></a><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="http://static.adzerk.net/reddit/ads.html?sr=python,loggedin&bust2#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" style="position:absolute;" src="i(1).gif"></div>
+<div id="redditthis" style="width:300px;text-align:center;"><a style="font: small verdana,arial,sans-serif;color: #369;text-decoration: none;" target="top" href="http://ads.reddit.com/submit?url=http%3A////preview.adzerk.net/preview/829654">discuss this ad on reddit</a></div>
+<script type="text/javascript">
+  var timeout = 0;
+  var addFooter = function() {    
+    if (ados_ads == undefined) {
+      timeout++;
+      if(timeout < 500) {
+        setTimeout(addFooter, 10);
+      }
+    }
+    else {
+      $('#redditthis').append("<a style=\"font: small verdana,arial,sans-serif;color: #369;text-decoration: none;\" target=\"top\" href=\"http://ads.reddit.com/submit?url=" + escape("http:////preview.adzerk.net/preview/" + ados_ads["main"].id) + "\">discuss this ad on reddit</a>");
+    }
+  };
+  $(window).load(addFooter);
+</script>
+
+</body></html>
