@@ -13,6 +13,6 @@ BOT_NAME = 'redditdata'
 SPIDER_MODULES = ['redditdata.spiders']
 NEWSPIDER_MODULE = 'redditdata.spiders'
 DEFAULT_ITEM_CLASS = 'redditdata.items.RedditPost'
-
+ITEM_PIPELINES = {'redditdata.pipelines.PostPipeline'}
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 USER_AGENT = 'stripper (+http://stripperspider.org)'

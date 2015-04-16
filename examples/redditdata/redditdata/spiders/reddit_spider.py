@@ -21,13 +21,14 @@ class RedditSpider(Spider):
         :return: list of data scraped by the scraper
         """
         sel = Selector(response)
-        sites = sel.xpath('//*[@id="siteTable"]/div')
-        posts = []
+        posts = sel.xpath('//*[@id="siteTable"]/div[contains(@class, "thing")]')
+        parsed_posts = []
 
         # TODO: test this shit
-        for site in sites:
-            post = RedditPost()
-            post['title'] = site.xpath('/div[2]/p[1]/a/text()').extract()
-            post['votes'] = site.xpath('/div[1]/div[3]').text()
-            post['url'] = site.xpath('/div[2]/p[1]/a/@href').extract()
-            posts.append(post)
+        for post in posts:
+            parsed_post = RedditPost()
+            parsed_post['votes'] = post.xpath('div[1]/div[@class="score unvoted"]/text()').extract()
+            parsed_post['title'] = post.xpath('div[2]/p/a[contains(@class, "title")]/text()').extract()
+            parsed_post['url'] = post.xpath('div[2]/p/a[contains(@class, "title")]/@href').extract()
+            parsed_posts.append(parsed_post)
+        return parsed_posts
